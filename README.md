@@ -10,15 +10,13 @@ A Python script for monitoring changes on a website at specified intervals. The 
 ## Instructions
 
 1. Clone the repository to your local machine:
-git clone https://github.com/your-account/webchangemontior.git
+git clone https://github.com/sh4mia/WebChangeMonitor
 
 2. Navigate to the project directory:
-cd webchangemonitor
 
 3. Install the required Python libraries.
 
-4. Run the script:
-python check_web.py
+4. Run the script.
 
 
 5. Follow the instructions displayed on the screen:
