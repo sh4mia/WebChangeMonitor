@@ -1,35 +1,65 @@
 # Website Change Monitoring
 
-A Python script for monitoring changes on a website at specified intervals. The script compares the previous and current content of the website and displays and records the differences if any.
+`Website Change Monitoring` is a simple Python script dockerized in a Docker container for monitoring changes on websites. The script checks a specified website at regular intervals and logs any changes in the website's content.
 
-## Requirements
+## Container Setup
 
-- Python 3.x
-- Python libraries: requests, difflib
+1. Make sure you have Docker installed on your computer.
 
-## Instructions
+2. Clone the `WebChangeMonitor` repository to your local machine:
+   ```
+   git clone https://github.com/sh4mia/WebChangeMonitor.git
+   ```
+3. Navigate to the `web_check` directory:
+   ```
+   cd WebChangeMonitor
+   ```
+4. To build the Docker image, run the following command:
+   ```
+   docker build -t WebChangeMonitor .
+   ```
 
-1. Clone the repository to your local machine:
-git clone https://github.com/sh4mia/WebChangeMonitor
+## Usage
 
-2. Navigate to the project directory:
+1. Run a Docker container based on the `WebChangeMonitor` image:
+   ```
+   docker run -it --name WebChangeMonitor_container WebChangeMonitor
+   ```
+2. Follow the instructions displayed on the screen.
 
-3. Install the required Python libraries.
+   - Enter the website URL to monitor.
+   - Choose the monitoring interval from the available options or enter a custom interval in seconds.
 
-4. Run the script.
+3. The script will start monitoring the website and display information about any changes in the content.
 
+   - If the website content changes, the script will log the changes and display the difference between the previous and current content.
+   - Change logs will be saved in the `log.txt` file.
 
-5. Follow the instructions displayed on the screen:
+4. To stop the script, use the Ctrl+C key combination.
 
-- Enter the URL of the website you want to monitor.
-- Choose the interval for checking website changes.
+## Options
 
-The script will regularly check the website at the specified interval and display any differences found.
+- `--interval` - The monitoring interval in seconds. Available options: 30, 60, 300, 1800. Default: 60.
+- `--custom-interval` - Custom monitoring interval in seconds.
+- `--log-file-path` - Path to the log file. Default: log.txt.
 
-6. The script will also log the changes in a `log.txt` file located in the same directory as the script.
+## Recommendations
 
-## Notes
+- It is recommended to run the script inside a Docker container to ensure consistent execution across different environments.
+- Ensure that you have the required dependencies installed by building the Docker image.
+- Customize the options and arguments as per your specific monitoring needs.
 
-- Ensure that you have a stable internet connection to access the websites you want to monitor.
-- The `log.txt` file will be created in the same directory as the script if it doesn't exist already.
-- Customize the interval by providing the number of seconds. For example, to check every 10 minutes, enter an interval of 600 seconds.
+## Update 1.1
+
+In version 1.1 of the "Website Change Monitoring" the following updates have been made:
+
+- Dockerized
+- Updated Readme.md
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+This code is provided under the [MIT License](https://opensource.org/licenses/MIT). Feel free to modify and use it in your projects.
